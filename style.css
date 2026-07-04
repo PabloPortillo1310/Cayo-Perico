@@ -11,10 +11,13 @@ body{
     --orange: #ff7300;
     --rose: #f88181;
     --red: #ff0000;
+    --violet: #d300ff;
+    --light-violet: #EA82FF;
+    --green: #61ff29;
+    --light-green: #B8FF98;
 }
 .site-header {
     padding: 0 20px;
-    position: fixed;
     display: grid;
     align-items: center;
     width: 100%;
@@ -22,6 +25,7 @@ body{
     grid-template-columns: 1fr 1fr 1fr;
     box-sizing: border-box;
     z-index: 1000;
+    position: absolute;
 }
 .logo{
     width: clamp(20px, 1.8vw, 40px);
@@ -41,16 +45,37 @@ body{
 .menu a{
     text-align: center;
     font-family: "Cinzel", serif;
-    font-size: clamp(13px, 0.7vw, 28px);
-    color: var(--gold);
-    text-shadow: 
-    0px 0px 9px var(--orange),
-    0px 0px 10px var(--orange);
+    font-size: clamp(11px, 0.7vw, 28px);
     text-decoration: none;
     padding: 0 15px;
     text-transform: uppercase;
     font-weight: bold;
 }
+.menu-propuesta{
+    color: var(--gold);
+    text-shadow: 
+    0px 0px 9px var(--orange),
+    0px 0px 10px var(--orange);
+}
+.menu-cafe{
+    color: var(--gold);
+    text-shadow: 
+    0px 0px 9px var(--orange),
+    0px 0px 10px var(--orange);
+}
+.menu-barber{
+    color: var(--light-green);
+    text-shadow: 
+    0px 0px 9px var(--green),
+    0px 0px 10px var(--green);
+}
+.menu-tattoo{
+    color: var(--light-violet);
+    text-shadow: 
+    0px 0px 9px var(--violet),
+    0px 0px 10px var(--violet);
+}
+
 .main-container {
     position: relative;
     width: 100%;
@@ -65,6 +90,8 @@ body{
     filter: brightness(0.3);
     object-fit: cover;
     position: absolute;
+    animation:zoom 25s ease-in-out infinite alternate;
+
 }
 .site-title{ 
     text-align: center;
@@ -76,9 +103,10 @@ body{
     0px 0px 10px var(--orange);
     text-transform: uppercase;
     position: absolute;
-    top: 44%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);
+    animation: neon-flicker 8s infinite;
 }
 .site-subtitle{
     text-align: center;
@@ -86,11 +114,87 @@ body{
     font-size: clamp(10px, 2vw, 20px);
     color: var(--rose);
     text-shadow: 
-    0px 0px 9px var(--red),
-    0px 0px 10px var(--red);
+    0px 0px 8px var(--red),
+    0px 0px 12px var(--red),
+    0px 0px 20px var(--red);
     text-transform: uppercase;
     position: absolute;
-    top: 52%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+@keyframes neon-flicker{
+
+    /* Encendido normal */
+    0%, 70%, 100%{
+        opacity:1;
+        color: var(--gold);
+
+        text-shadow:
+            0 0 5px #ffb347,
+            0 0 10px #ffb347,
+            0 0 20px #ff9900,
+            0 0 40px #ff7700,
+            0 0 80px #ff5500;
+    }
+
+    /* Empieza a fallar */
+    71%{
+        opacity:.4;
+    }
+
+    /* Apagado */
+    72%,73%{
+        opacity:0;
+        color:transparent;
+        text-shadow:none;
+    }
+
+    /* Vuelve un instante */
+    74%{
+        opacity:1;
+        color:var(--gold);
+
+        text-shadow:
+            0 0 8px #ffd17d,
+            0 0 20px #ffb347,
+            0 0 45px #ff9900,
+            0 0 80px #ff7700;
+    }
+
+    /* Otro fallo */
+    75%{
+        opacity:0;
+        color:transparent;
+        text-shadow:none;
+    }
+
+    /* Ya queda estable */
+    76%,100%{
+        opacity:1;
+        color: var(--gold);
+
+        text-shadow:
+            0 0 5px #ffb347,
+            0 0 10px #ffb347,
+            0 0 20px #ff9900,
+            0 0 40px #ff7700,
+            0 0 80px #ff5500;
+    }
+
+}
+@keyframes zoom{
+
+from{
+
+transform:scale(1);
+
+}
+
+to{
+
+transform:scale(1.04);
+
+}
+
 }
