@@ -3,6 +3,7 @@ html::-webkit-scrollbar {
 }
 body{
     margin: 0;
+    padding: 0;
     background: var(--background);
 }
 :root{
@@ -15,6 +16,7 @@ body{
     --light-violet: #EA82FF;
     --green: #61ff29;
     --light-green: #B8FF98;
+    --white: #fff1df;
 }
 .site-header {
     padding: 0 20px;
@@ -94,7 +96,6 @@ body{
         black 50%,
         transparent 100%
     );
-
     mask-image: linear-gradient(
         to bottom,
         black 0%,
@@ -133,8 +134,125 @@ body{
 }
 .about-us{
     width: 100%;
-    position: absolute;
+    position: relative;
     text-align: center;
+    overflow: hidden;
+}
+.background-particles{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+.about-us-content{
+    position: relative;
+    z-index: 2;
+}
+.particle{
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--gold);
+    animation: float 10s ease-in-out infinite;
+}
+.p1{
+    width:4px;
+    height:4px;
+    top:12%;
+    left:18%;
+}
+
+.p2{
+    width:8px;
+    height:8px;
+    top:25%;
+    left:78%;
+    animation-delay:2s;
+}
+
+.p3{
+    width:3px;
+    height:3px;
+    top:42%;
+    left:32%;
+    animation-delay:4s;
+}
+
+.p4{
+    width:6px;
+    height:6px;
+    top:60%;
+    left:12%;
+    animation-delay:1s;
+}
+
+.p5{
+    width:5px;
+    height:5px;
+    top:70%;
+    left:82%;
+    animation-delay:3s;
+}
+
+.p6{
+    width:9px;
+    height:9px;
+    top:84%;
+    left:40%;
+    animation-delay:6s;
+}
+
+.p7{
+    width:3px;
+    height:3px;
+    top:18%;
+    left:55%;
+    animation-delay:5s;
+}
+
+.p8{
+    width:7px;
+    height:7px;
+    top:48%;
+    left:68%;
+    animation-delay:7s;
+}
+
+.p9{
+    width:5px;
+    height:5px;
+    top:92%;
+    left:20%;
+    animation-delay:2.5s;
+}
+
+.p10{
+    width:4px;
+    height:4px;
+    top:8%;
+    left:88%;
+    animation-delay:1.5s;
+}
+.about-us::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(251, 0, 255, 0.034) 2%,
+        transparent 20%,
+        transparent 80%,
+        rgba(9, 255, 0, 0.034) 100%
+    );
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(
+        to top,
+        black 93%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to top,
+        black 93%,
+        transparent 100%
+    );
 }
 .about-us p{
     margin-bottom: 80vh;
@@ -143,13 +261,14 @@ body{
     font-weight: bold;
 }
 .about-us-title{
+    margin-top: 20vh;
     color: var(--gold);
     text-shadow: 
-    0 0 9px var(--orange),
+    0 0 12px var(--orange),
     0 0 20px var(--orange),
     0 0 30px var(--orange);
     margin-bottom: 35vh;
-    font-size: clamp(23px, 3vw, 40px);
+    font-size: clamp(23px, 1.7vw, 40px);
     text-transform: uppercase;
 }
 .about-barber{
@@ -165,35 +284,11 @@ body{
     text-shadow: 0 0 12px var(--violet);
 }
 .about-us-text{
-    color: var(--rose);
+    color: var(--white);
     text-shadow: 
-    0 0 9px var(--red),
-    0 0 10px var(--red);
+    0 0 9px var(--gold);
     width: 80%;
     margin: 0 auto;
-}
-.barber-container{
-    width: 100%;
-    height: 100svh;
-    overflow: hidden;
-}
-.barber-image{
-    width: 100%;
-    height: 100%;
-    filter: brightness(0.1);
-    object-fit: cover;
-    position: relative;
-    -webkit-mask-image: linear-gradient(
-        to bottom,
-        black 50%,
-        transparent 100%
-    );
-
-    mask-image: linear-gradient(
-        to bottom,
-        black 0%,
-        transparent 100%
-    );
 }
 @keyframes neon-flicker{
 
@@ -268,5 +363,40 @@ to{
 transform:scale(1.04);
 
 }
+
+}
+@keyframes float{
+
+    0%{
+        transform:translateY(0px);
+        
+    }
+
+    50%{
+        transform:translateY(-25px);
+        
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+
+}
+@keyframes ambientLight{
+
+    0%{
+        transform: translateY(-50%) scale(1);
+        opacity: .18;
+    }
+
+    50%{
+        transform: translateY(-50%) scale(1.08);
+        opacity: .28;
+    }
+
+    100%{
+        transform: translateY(-50%) scale(1);
+        opacity: .18;
+    }
 
 }
