@@ -13,10 +13,12 @@ body{
     --rose: #f88181;
     --red: #ff0000;
     --violet: #d300ff;
-    --light-violet: #EA82FF;
+    --light-violet: #e8a5f5;
     --green: #61ff29;
-    --light-green: #B8FF98;
+    --light-green: #cdf2bb;
     --white: #fff1df;
+    --blue: #006283;
+    --light-yellow: #fff293;
 }
 .site-header {
     padding: 0 20px;
@@ -132,163 +134,125 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+/* ¿Qué somos? */
+
 .about-us{
     width: 100%;
     position: relative;
-    text-align: center;
     overflow: hidden;
-}
-.background-particles{
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
 }
 .about-us-content{
     position: relative;
     z-index: 2;
 }
-.particle{
-    position: absolute;
-    border-radius: 50%;
-    background-color: var(--gold);
-    animation: float 10s ease-in-out infinite;
-}
-.p1{
-    width:4px;
-    height:4px;
-    top:12%;
-    left:18%;
-}
-
-.p2{
-    width:8px;
-    height:8px;
-    top:25%;
-    left:78%;
-    animation-delay:2s;
-}
-
-.p3{
-    width:3px;
-    height:3px;
-    top:42%;
-    left:32%;
-    animation-delay:4s;
-}
-
-.p4{
-    width:6px;
-    height:6px;
-    top:60%;
-    left:12%;
-    animation-delay:1s;
-}
-
-.p5{
-    width:5px;
-    height:5px;
-    top:70%;
-    left:82%;
-    animation-delay:3s;
-}
-
-.p6{
-    width:9px;
-    height:9px;
-    top:84%;
-    left:40%;
-    animation-delay:6s;
-}
-
-.p7{
-    width:3px;
-    height:3px;
-    top:18%;
-    left:55%;
-    animation-delay:5s;
-}
-
-.p8{
-    width:7px;
-    height:7px;
-    top:48%;
-    left:68%;
-    animation-delay:7s;
-}
-
-.p9{
-    width:5px;
-    height:5px;
-    top:92%;
-    left:20%;
-    animation-delay:2.5s;
-}
-
-.p10{
-    width:4px;
-    height:4px;
-    top:8%;
-    left:88%;
-    animation-delay:1.5s;
-}
-.about-us::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        90deg,
-        rgba(251, 0, 255, 0.034) 2%,
-        transparent 20%,
-        transparent 80%,
-        rgba(9, 255, 0, 0.034) 100%
-    );
-    pointer-events: none;
-    -webkit-mask-image: linear-gradient(
-        to top,
-        black 93%,
-        transparent 100%
-    );
-    mask-image: linear-gradient(
-        to top,
-        black 93%,
-        transparent 100%
-    );
-}
-.about-us p{
-    margin-bottom: 80vh;
-    font-size: clamp(10px, 1.1vw, 28px);
+.about-us-title{
+    text-align: center;
+    margin-top: 10vh;
+    color: var(--gold);
+    text-shadow:
+            0 0 5px #ffb347,
+            0 0 10px #ffb347,
+            0 0 20px #ff9900,
+            0 0 30px #ff7700,
+            0 0 60px #ff5500;
+    font-size: clamp(22px, 1.8vw, 40px);
     text-transform: uppercase;
+}
+.about-us-subtitle{
+    text-align: center;
+    text-transform: uppercase;
+    color:var(--rose);
+    text-shadow: 
+    0 0 8px var(--red),
+    0 0 12px var(--red);
+    font-weight: normal;
+    font-size: clamp(10px, 1.1vw, 28px);
+}
+.about-us-description-1{
+    width: 60%;
+    margin: 100px auto 0;
+    color:var(--white);
+    letter-spacing: 1px;
+    line-height: 1.6;
+    font-size: clamp(10px, 1.1vw, 28px);
+
+}
+.about-us-description-2{
+    width: 60%;
+    margin: 70px auto;
+    color:var(--rose);
+    text-shadow:
+        0 0 8px var(--red),
+        0 0 12px var(--red);
+    letter-spacing: 1px;
+    font-size: clamp(10px, 1.1vw, 28px);
     font-weight: bold;
 }
-.about-us-title{
-    margin-top: 20vh;
-    color: var(--gold);
-    text-shadow: 
-    0 0 12px var(--orange),
-    0 0 20px var(--orange),
-    0 0 30px var(--orange);
-    margin-bottom: 35vh;
-    font-size: clamp(23px, 1.7vw, 40px);
-    text-transform: uppercase;
+.about-us-description-3{
+    width: 60%;
+    margin: 30px auto;
+    color:var(--white);
+    letter-spacing: 1px;
+    font-size: clamp(10px, 1.1vw, 28px);
 }
-.about-barber{
-    color:var(--light-green);
-    text-shadow: 0 0 12px var(--green);
+.about-us-description-4{
+    width: 60%;
+    margin: 30px auto;
+    color:var(--white);
+    letter-spacing: 1px;
+    font-size: clamp(10px, 1.1vw, 28px);
 }
-.about-cafe{
-    color:var(--gold);
-    text-shadow: 0 0 12px var(--orange);
+.about-us-description-5{
+    width: 60%;
+    margin: 30px auto;
+    color:var(--white);
+    letter-spacing: 1px;
+    font-size: clamp(10px, 1.1vw, 28px);
 }
-.about-tattoo{
-    color:var(--light-violet);
-    text-shadow: 0 0 12px var(--violet);
-}
-.about-us-text{
+.about-us-final{
+    width: 60%;
+    margin: 50px auto;
+    letter-spacing: 1px;
+    font-size: clamp(10px, 1.1vw, 28px);
+    font-weight: bold;
     color: var(--white);
     text-shadow: 
-    0 0 9px var(--gold);
-    width: 80%;
-    margin: 0 auto;
+        0 0 8px #ffb347,
+        0 0 18px #ff9900,
+        0 0 25px #ff7700,
+        0 0 40px #ff5500;
+    margin-bottom: 1000px;
+}
+.bd-barber{
+    text-transform: uppercase;
+    color:var(--light-yellow);
+    text-shadow: 
+        0 0 5px #7bff47,
+        0 0 8px #7bff47,
+        0 0 18px #66cc00,
+        0 0 25px #44aa00,
+        0 0 40px #228800;
+}
+.pachii-tattoo{
+    text-transform: uppercase;
+    color:var(--light-violet);
+    text-shadow: 
+        0 0 5px #d300ff,
+        0 0 8px #d300ff,
+        0 0 18px #b200d3,
+        0 0 25px #9100b2,
+        0 0 40px #700091;
+}
+.cafe{
+    text-transform: uppercase;
+    color:var(--gold);
+    text-shadow: 
+        0 0 5px #ffb347,
+        0 0 8px #ffb347,
+        0 0 18px #ff9900,
+        0 0 25px #ff7700,
+        0 0 40px #ff5500;
 }
 @keyframes neon-flicker{
 
