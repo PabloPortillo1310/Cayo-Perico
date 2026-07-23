@@ -5,6 +5,7 @@ body{
     margin: 0;
     padding: 0;
     background: var(--background);
+    font-family: "Cinzel", serif;
 }
 :root{
     --background: #000000;
@@ -20,6 +21,11 @@ body{
     --blue: #006283;
     --light-yellow: #fff293;
 }
+
+
+/* HEADER */
+
+
 .site-header {
     padding: 0 20px;
     display: grid;
@@ -48,7 +54,6 @@ body{
 }
 .menu a{
     text-align: center;
-    font-family: "Cinzel", serif;
     font-size: clamp(11px, 0.7vw, 28px);
     text-decoration: none;
     padding: 0 15px;
@@ -80,6 +85,10 @@ body{
     0px 0px 10px var(--violet);
 }
 
+
+/* MENU PRINCIPAL */
+
+
 .main-container {
     position: relative;
     width: 100%;
@@ -106,7 +115,6 @@ body{
 }
 .site-title{ 
     text-align: center;
-    font-family: "Cinzel", serif;
     font-size: clamp(20px,6vw, 50px);
     color: var(--gold);
     text-shadow: 
@@ -121,7 +129,6 @@ body{
 }
 .site-subtitle{
     text-align: center;
-    font-family: "Cinzel", serif;
     font-size: clamp(10px, 2vw, 20px);
     color: var(--rose);
     text-shadow: 
@@ -135,7 +142,9 @@ body{
     transform: translate(-50%, -50%);
 }
 
-/* ¿Qué somos? */
+
+/* ¿QUÉ SOMOS */
+
 
 .about-us{
     width: 100%;
@@ -167,7 +176,7 @@ body{
     0 0 8px var(--red),
     0 0 12px var(--red);
     font-weight: normal;
-    font-size: clamp(10px, 1.1vw, 28px);
+    font-size: clamp(10px, 1vw, 28px);
 }
 .about-us-description-1{
     width: 60%;
@@ -175,10 +184,11 @@ body{
     color:var(--white);
     letter-spacing: 1px;
     line-height: 1.6;
-    font-size: clamp(10px, 1.1vw, 28px);
+    font-size: clamp(10px, 1vw, 28px);
 
 }
 .about-us-description-2{
+    text-align: center;
     width: 60%;
     margin: 70px auto;
     color:var(--rose);
@@ -186,7 +196,7 @@ body{
         0 0 8px var(--red),
         0 0 12px var(--red);
     letter-spacing: 1px;
-    font-size: clamp(10px, 1.1vw, 28px);
+    font-size: clamp(10px, 1vw, 28px);
     font-weight: bold;
 }
 .about-us-description-3{
@@ -194,27 +204,28 @@ body{
     margin: 30px auto;
     color:var(--white);
     letter-spacing: 1px;
-    font-size: clamp(10px, 1.1vw, 28px);
+    font-size: clamp(10px, 1vw, 28px);
 }
 .about-us-description-4{
     width: 60%;
     margin: 30px auto;
     color:var(--white);
     letter-spacing: 1px;
-    font-size: clamp(10px, 1.1vw, 28px);
+    font-size: clamp(10px, 1vw, 28px);
 }
 .about-us-description-5{
     width: 60%;
     margin: 30px auto;
     color:var(--white);
     letter-spacing: 1px;
-    font-size: clamp(10px, 1.1vw, 28px);
+    font-size: clamp(10px, 1vw, 28px);
 }
 .about-us-final{
+    text-align: center;
     width: 60%;
     margin: 50px auto;
     letter-spacing: 1px;
-    font-size: clamp(10px, 1.1vw, 28px);
+    font-size: clamp(10px, 1vw, 28px);
     font-weight: bold;
     color: var(--white);
     text-shadow: 
@@ -222,9 +233,8 @@ body{
         0 0 18px #ff9900,
         0 0 25px #ff7700,
         0 0 40px #ff5500;
-    margin-bottom: 1000px;
 }
-.bd-barber{
+.w-bd-barber{
     text-transform: uppercase;
     color:var(--light-yellow);
     text-shadow: 
@@ -234,7 +244,7 @@ body{
         0 0 25px #44aa00,
         0 0 40px #228800;
 }
-.pachii-tattoo{
+.w-pachii-tattoo{
     text-transform: uppercase;
     color:var(--light-violet);
     text-shadow: 
@@ -244,7 +254,7 @@ body{
         0 0 25px #9100b2,
         0 0 40px #700091;
 }
-.cafe{
+.w-cafe{
     text-transform: uppercase;
     color:var(--gold);
     text-shadow: 
@@ -254,6 +264,124 @@ body{
         0 0 25px #ff7700,
         0 0 40px #ff5500;
 }
+
+
+/* MARCAS */
+
+
+.brands-title{
+    text-align: center;
+    margin: 100px;
+    color: var(--gold);
+    text-shadow:
+            0 0 5px #ffb347,
+            0 0 10px #ffb347,
+            0 0 20px #ff9900,
+            0 0 30px #ff7700,
+            0 0 60px #ff5500;
+    font-size: clamp(22px, 1.8vw, 40px);
+    text-transform: uppercase;
+}
+.brands-image-container{
+    position: relative;
+    width: 100%;
+    height: 80svh;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 5px;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.brands-image{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    object-fit: cover;
+    box-shadow: 0 0 30px #000;
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 20%,
+        black 80%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 20%,
+        black 80%,
+        transparent 100%
+    );
+    filter: brightness(0.4);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease; 
+}
+
+.brands-image-container > div:hover .brands-image {
+    transform: scale(1.05); 
+    filter: brightness(0.9); 
+}
+.brands-image-container:has(.brands-image:hover){
+    grid-template-columns: 0.7fr 0.7fr 0.7fr;
+}
+.brands-image:hover{
+    grid-template-columns: 1.6fr;
+}
+.brands-image-container:has(> div:nth-child(1):hover) { grid-template-columns: 1.6fr 0.7fr 0.7fr; }
+.brands-image-container:has(> div:nth-child(2):hover) { grid-template-columns: 0.7fr 1.6fr 0.7fr; }
+.brands-image-container:has(> div:nth-child(3):hover) { grid-template-columns: 0.7fr 0.7fr 1.6fr; }
+
+.brands p{
+    text-transform: uppercase;
+    font-size: clamp(10px, 1.3vw, 28px);
+    font-weight: bold;
+    position: absolute;
+    top: 10%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+.pachii-tattoo p{
+    left: 7%;
+    text-align: left;
+    color:var(--light-violet);
+    text-shadow: 
+        0 0 5px #d300ff,
+        0 0 8px #d300ff,
+        0 0 18px #b200d3,
+        0 0 25px #9100b2,
+        0 0 40px #700091;
+}
+.cafe p{
+    left: 50%;
+    text-align: center;
+    color:var(--gold);
+    text-shadow: 
+        0 0 5px #ffb347,
+        0 0 8px #ffb347,
+        0 0 18px #ff9900,
+        0 0 25px #ff7700,
+        0 0 40px #ff5500;
+}
+.bd-barber p{
+    left: 92%;
+    text-align: right;
+    color:var(--light-yellow);
+    text-shadow: 
+        0 0 5px #7bff47,
+        0 0 8px #7bff47,
+        0 0 18px #66cc00,
+        0 0 25px #44aa00,
+        0 0 40px #228800;
+}
+
+
+
+
+
+
+/* ANIMACIONES */
+
+
 @keyframes neon-flicker{
 
     /* Encendido normal */
