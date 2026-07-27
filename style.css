@@ -8,7 +8,7 @@ body{
     font-family: "Cinzel", serif;
 }
 :root{
-    --background: #000000;
+    --background: #020202;
     --gold: #ffe684;
     --orange: #ff7300;
     --rose: #f88181;
@@ -20,6 +20,7 @@ body{
     --white: #fff1df;
     --blue: #006283;
     --light-yellow: #fff293;
+    --creme: #fdeba1;
 }
 
 
@@ -98,7 +99,7 @@ body{
 .main-image {
     width: 100%;
     height:100%;
-    filter: brightness(0.4);
+    filter: brightness(0.6);
     object-fit: cover;
     position: absolute;
     animation:zoom 25s ease-in-out infinite alternate;
@@ -157,118 +158,49 @@ body{
 }
 .about-us-title{
     text-align: center;
-    margin-top: 10vh;
-    color: var(--gold);
-    text-shadow:
-            0 0 5px #ffb347,
-            0 0 10px #ffb347,
-            0 0 20px #ff9900,
-            0 0 30px #ff7700,
-            0 0 60px #ff5500;
+    color: var(--creme);
+    width: 55%;
+    margin: 0 auto;
     font-size: clamp(22px, 1.8vw, 40px);
-    text-transform: uppercase;
+    text-shadow: 
+        0 0 8px #ff6f00,
+        0 0 20px #ff6a00;
 }
 .about-us-subtitle{
+    margin: 10vh 0 4vh 0;
     text-align: center;
     text-transform: uppercase;
-    color:var(--rose);
-    text-shadow: 
-    0 0 8px var(--red),
-    0 0 12px var(--red);
-    font-weight: normal;
-    font-size: clamp(10px, 1vw, 28px);
+    color:var(--white);
+    font-size: clamp(10px, 0.8vw, 28px);
+    font-family: sans-serif;
 }
 .about-us-description-1{
-    width: 60%;
-    margin: 100px auto 0;
+    text-align: center;
+    width: 39%;
+    margin: 10vh auto ;
     color:var(--white);
-    letter-spacing: 1px;
     line-height: 1.6;
     font-size: clamp(10px, 1vw, 28px);
+    font-family: sans-serif;
 
 }
-.about-us-description-2{
-    text-align: center;
-    width: 60%;
-    margin: 70px auto;
-    color:var(--rose);
-    text-shadow:
-        0 0 8px var(--red),
-        0 0 12px var(--red);
-    letter-spacing: 1px;
-    font-size: clamp(10px, 1vw, 28px);
-    font-weight: bold;
-}
-.about-us-description-3{
-    width: 60%;
-    margin: 30px auto;
-    color:var(--white);
-    letter-spacing: 1px;
-    font-size: clamp(10px, 1vw, 28px);
-}
-.about-us-description-4{
-    width: 60%;
-    margin: 30px auto;
-    color:var(--white);
-    letter-spacing: 1px;
-    font-size: clamp(10px, 1vw, 28px);
-}
-.about-us-description-5{
-    width: 60%;
-    margin: 30px auto;
-    color:var(--white);
-    letter-spacing: 1px;
-    font-size: clamp(10px, 1vw, 28px);
-}
 .about-us-final{
+    margin: 10vh 0 4vh 0;
     text-align: center;
-    width: 60%;
-    margin: 50px auto;
-    letter-spacing: 1px;
-    font-size: clamp(10px, 1vw, 28px);
-    font-weight: bold;
-    color: var(--white);
-    text-shadow: 
-        0 0 8px #ffb347,
-        0 0 18px #ff9900,
-        0 0 25px #ff7700,
-        0 0 40px #ff5500;
-}
-.w-bd-barber{
     text-transform: uppercase;
-    color:var(--light-yellow);
+    color: var(--rose);
     text-shadow: 
-        0 0 5px #7bff47,
-        0 0 8px #7bff47,
-        0 0 18px #66cc00,
-        0 0 25px #44aa00,
-        0 0 40px #228800;
-}
-.w-pachii-tattoo{
-    text-transform: uppercase;
-    color:var(--light-violet);
-    text-shadow: 
-        0 0 5px #d300ff,
-        0 0 8px #d300ff,
-        0 0 18px #b200d3,
-        0 0 25px #9100b2,
-        0 0 40px #700091;
-}
-.w-cafe{
-    text-transform: uppercase;
-    color:var(--gold);
-    text-shadow: 
-        0 0 5px #ffb347,
-        0 0 8px #ffb347,
-        0 0 18px #ff9900,
-        0 0 25px #ff7700,
-        0 0 40px #ff5500;
+    0 0 8px var(--red),
+    0 0 10px var(--red);
+    font-size: clamp(10px, 0.8vw, 28px);
 }
 
 
 /* MARCAS */
 
-
+.brands{
+    margin-top: 10vh;
+}
 .brands-title{
     text-align: center;
     margin: 100px;
