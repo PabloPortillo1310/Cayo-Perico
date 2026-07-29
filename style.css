@@ -99,7 +99,6 @@ body{
 .main-image {
     width: 100%;
     height:100%;
-    filter: brightness(0.6);
     object-fit: cover;
     position: absolute;
     animation:zoom 25s ease-in-out infinite alternate;
@@ -167,12 +166,23 @@ body{
         0 0 20px #ff6a00;
 }
 .about-us-subtitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 10vh 0 4vh 0;
     text-align: center;
     text-transform: uppercase;
     color:var(--white);
     font-size: clamp(10px, 0.8vw, 28px);
     font-family: sans-serif;
+    gap: 1rem;
+}
+.about-us-subtitle::before,
+.about-us-subtitle::after{
+    content: "";
+    width: 2.5vw;
+    height: 1px;
+    background: var(--gold);
 }
 .about-us-description-1{
     text-align: center;
@@ -200,31 +210,16 @@ body{
 
 .brands{
     margin-top: 10vh;
-}
-.brands-title{
-    text-align: center;
-    margin: 100px;
-    color: var(--gold);
-    text-shadow:
-            0 0 5px #ffb347,
-            0 0 10px #ffb347,
-            0 0 20px #ff9900,
-            0 0 30px #ff7700,
-            0 0 60px #ff5500;
-    font-size: clamp(22px, 1.8vw, 40px);
-    text-transform: uppercase;
-}
-.brands-image-container{
-    position: relative;
     width: 100%;
-    height: 80svh;
+    height: 90svh;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 5px;
     overflow: hidden;
     transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
-.brands-image{
+
+.brand-image{
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -249,32 +244,57 @@ body{
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease; 
 }
 
-.brands-image-container > div:hover .brands-image {
+.brands > article:hover .brand-image {
     transform: scale(1.05); 
     filter: brightness(0.9); 
 }
-.brands-image-container:has(.brands-image:hover){
+.brands:has(.brand-image:hover){
     grid-template-columns: 0.7fr 0.7fr 0.7fr;
 }
-.brands-image:hover{
+.brand-image:hover{
     grid-template-columns: 1.6fr;
 }
-.brands-image-container:has(> div:nth-child(1):hover) { grid-template-columns: 1.6fr 0.7fr 0.7fr; }
-.brands-image-container:has(> div:nth-child(2):hover) { grid-template-columns: 0.7fr 1.6fr 0.7fr; }
-.brands-image-container:has(> div:nth-child(3):hover) { grid-template-columns: 0.7fr 0.7fr 1.6fr; }
+.brands:has(> article:nth-child(1):hover) { grid-template-columns: 1.6fr 0.7fr 0.7fr; }
+.brands:has(> article:nth-child(2):hover) { grid-template-columns: 0.7fr 1.6fr 0.7fr; }
+.brands:has(> article:nth-child(3):hover) { grid-template-columns: 0.7fr 0.7fr 1.6fr; }
 
-.brands p{
+.brand-card{
     text-transform: uppercase;
     font-size: clamp(10px, 1.3vw, 28px);
     font-weight: bold;
-    position: absolute;
-    top: 10%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
+    position: relative;
+    overflow:hidden;
+    cursor: pointer;
 }
-.pachii-tattoo p{
-    left: 7%;
-    text-align: left;
+.brand-overlay{
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2rem;
+}
+.brand-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2.5rem;
+    box-sizing: border-box;
+}
+.brand-title{
+    margin: 0;
+    font-size: clamp(22px, 1.6vw, 38px);
+    transition: transform 0.45 ease;
+    text-align: center;
+}
+.brand-description, .brand-button{
+    opacity: 0;
+}
+.pachii-tattoo .brand-title{
     color:var(--light-violet);
     text-shadow: 
         0 0 5px #d300ff,
@@ -283,9 +303,7 @@ body{
         0 0 25px #9100b2,
         0 0 40px #700091;
 }
-.cafe p{
-    left: 50%;
-    text-align: center;
+.cafe .brand-title{
     color:var(--gold);
     text-shadow: 
         0 0 5px #ffb347,
@@ -294,9 +312,7 @@ body{
         0 0 25px #ff7700,
         0 0 40px #ff5500;
 }
-.bd-barber p{
-    left: 92%;
-    text-align: right;
+.bd-barber .brand-title{
     color:var(--light-yellow);
     text-shadow: 
         0 0 5px #7bff47,
