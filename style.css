@@ -211,10 +211,9 @@ body{
 .brands{
     margin-top: 10vh;
     width: 100%;
-    height: 90svh;
+    height: 80svh;
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    gap: 5px;
     overflow: hidden;
     transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -223,7 +222,6 @@ body{
     width: 100%;
     height: 100%;
     overflow: hidden;
-    position: relative;
     object-fit: cover;
     box-shadow: 0 0 30px #000;
     mask-image: linear-gradient(
@@ -240,13 +238,13 @@ body{
         black 80%,
         transparent 100%
     );
-    filter: brightness(0.4);
+    filter: brightness(0.8);
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease; 
 }
 
 .brands > article:hover .brand-image {
     transform: scale(1.05); 
-    filter: brightness(0.9); 
+    filter: brightness(0.3); 
 }
 .brands:has(.brand-image:hover){
     grid-template-columns: 0.7fr 0.7fr 0.7fr;
@@ -266,19 +264,22 @@ body{
     overflow:hidden;
     cursor: pointer;
 }
+.brand-card:not(:last-child){
+    border-right: 5px solid var(--background);
+}
 .brand-overlay{
     position: absolute;
     inset: 0;
 
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 
     padding: 2rem;
 }
 .brand-content{
     width: 100%;
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -288,11 +289,42 @@ body{
 .brand-title{
     margin: 0;
     font-size: clamp(22px, 1.6vw, 38px);
-    transition: transform 0.45 ease;
     text-align: center;
+    position:absolute;
+    top: 50%;  
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    transition: top 0.6s ease;
+}
+.brand-card:hover .brand-title{
+    top: 3.5rem;
 }
 .brand-description, .brand-button{
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    width: 80%;
     opacity: 0;
+    transition: 
+        opacity .35s ease,
+        top .6s ease;
+}
+.brand-card:hover .brand-description{
+    opacity: 1;
+    top: 9rem;
+}
+.brand-card:hover .brand-button{
+    opacity:1;
+    top: calc(100% - 7rem);
+}
+.brand-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: .9rem 1.2rem;
+    margin-top: auto;
 }
 .pachii-tattoo .brand-title{
     color:var(--light-violet);
@@ -302,6 +334,22 @@ body{
         0 0 18px #b200d3,
         0 0 25px #9100b2,
         0 0 40px #700091;
+}
+.brand-description{
+    color:var(--white);
+    line-height: 1.6;
+    font-size: clamp(10px, 1vw, 28px);
+    font-family: sans-serif;
+    text-transform: none;
+    width: 80%;
+    margin: auto;
+    text-shadow: 
+        0 0 5px #000,
+        0 0 8px #000,
+        0 0 18px #000,
+        0 0 25px #000,
+        0 0 40px #000;
+    font-weight: normal;
 }
 .cafe .brand-title{
     color:var(--gold);
@@ -315,7 +363,7 @@ body{
 .bd-barber .brand-title{
     color:var(--light-yellow);
     text-shadow: 
-        0 0 5px #7bff47,
+        0 0 5px #4dac28,
         0 0 8px #7bff47,
         0 0 18px #66cc00,
         0 0 25px #44aa00,
