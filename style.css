@@ -252,9 +252,9 @@ body{
 .brand-image:hover{
     grid-template-columns: 1.6fr;
 }
-.brands:has(> article:nth-child(1):hover) { grid-template-columns: 1.6fr 0.7fr 0.7fr; }
-.brands:has(> article:nth-child(2):hover) { grid-template-columns: 0.7fr 1.6fr 0.7fr; }
-.brands:has(> article:nth-child(3):hover) { grid-template-columns: 0.7fr 0.7fr 1.6fr; }
+.brands:has(> article:nth-child(1):hover) { grid-template-columns: 1.4fr 0.8fr 0.8fr; }
+.brands:has(> article:nth-child(2):hover) { grid-template-columns: 0.8fr 1.4fr 0.8fr; }
+.brands:has(> article:nth-child(3):hover) { grid-template-columns: 0.8fr 0.8fr 1.4fr; }
 
 .brand-card{
     text-transform: uppercase;
@@ -325,15 +325,17 @@ body{
     text-decoration: none;
     padding: .9rem 1.2rem;
     margin-top: auto;
-}
-.pachii-tattoo .brand-title{
-    color:var(--light-violet);
-    text-shadow: 
-        0 0 5px #d300ff,
-        0 0 8px #d300ff,
-        0 0 18px #b200d3,
-        0 0 25px #9100b2,
-        0 0 40px #700091;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    background: transparent;
+    font-size: clamp(10px, 1vw, 28px);
+    letter-spacing: 0.08em;
+    transition: 
+        color .3s ease,
+        border-color .3 ease;
+    width: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .brand-description{
     color:var(--white);
@@ -351,6 +353,30 @@ body{
         0 0 40px #000;
     font-weight: normal;
 }
+.pachii-tattoo .brand-title{
+    color:var(--light-violet);
+    text-shadow: 
+        0 0 5px #d300ff,
+        0 0 8px #d300ff,
+        0 0 18px #b200d3,
+        0 0 25px #9100b2,
+        0 0 40px #700091;
+}
+.pachii-tattoo .brand-button{
+    color: var(--light-violet);
+    border-color: var(--violet);
+}
+.pachii-tattoo .brand-button:hover{
+    box-shadow: 
+        0 0 5px #d300ff,
+        0 0 8px #d300ff;
+    text-shadow: 
+        0 0 5px #d300ff,
+        0 0 8px #d300ff,
+        0 0 18px #b200d3,
+        0 0 25px #9100b2,
+        0 0 40px #700091;
+}
 .cafe .brand-title{
     color:var(--gold);
     text-shadow: 
@@ -360,8 +386,39 @@ body{
         0 0 25px #ff7700,
         0 0 40px #ff5500;
 }
+.cafe .brand-button{
+    color: var(--light-yellow);
+    border-color: var(--gold);
+}
+.cafe .brand-button:hover{
+    box-shadow: 
+        0 0 5px #ffb347,
+        0 0 8px #ffb347;
+    text-shadow: 
+        0 0 5px #ffb347,
+        0 0 8px #ffb347,
+        0 0 18px #ff9900,
+        0 0 25px #ff7700,
+        0 0 40px #ff5500;
+}
 .bd-barber .brand-title{
     color:var(--light-yellow);
+    text-shadow: 
+        0 0 5px #4dac28,
+        0 0 8px #7bff47,
+        0 0 18px #66cc00,
+        0 0 25px #44aa00,
+        0 0 40px #228800;
+}
+.bd-barber .brand-button{
+    color: var(--light-green);
+    border-color: var(--green);
+}
+.bd-barber .brand-button:hover{
+    color: var(--light-yellow);
+    box-shadow: 
+        0 0 5px #4dac28,
+        0 0 8px #7bff47;
     text-shadow: 
         0 0 5px #4dac28,
         0 0 8px #7bff47,
