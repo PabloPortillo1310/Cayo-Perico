@@ -70,27 +70,36 @@ body{
 .menu-cafe{
     color: var(--gold);
     text-shadow: 
-    0px 0px 9px var(--orange),
-    0px 0px 10px var(--orange);
+        0 0 5px #ffb347,
+        0 0 8px #ffb347,
+        0 0 18px #ff9900,
+        0 0 25px #ff7700,
+        0 0 40px #ff5500;
 }
 .menu-barber{
-    color: var(--light-green);
-    text-shadow: 
-    0px 0px 9px var(--green),
-    0px 0px 10px var(--green);
+    color: var(--light-yellow);
+     text-shadow: 
+        0 0 5px #4dac28,
+        0 0 8px #7bff47,
+        0 0 18px #66cc00,
+        0 0 25px #44aa00,
+        0 0 40px #228800;
 }
 .menu-tattoo{
     color: var(--light-violet);
     text-shadow: 
-    0px 0px 9px var(--violet),
-    0px 0px 10px var(--violet);
+        0 0 5px #d300ff,
+        0 0 8px #d300ff,
+        0 0 18px #b200d3,
+        0 0 25px #9100b2,
+        0 0 40px #700091;
 }
 
 
 /* MENU PRINCIPAL */
 
 
-.main-container {
+.main-page {
     position: relative;
     width: 100%;
     height: 100svh;
@@ -104,22 +113,32 @@ body{
     animation:zoom 25s ease-in-out infinite alternate;
     -webkit-mask-image: linear-gradient(
         to bottom,
-        black 50%,
+        black 78%,
         transparent 100%
     );
     mask-image: linear-gradient(
         to bottom,
-        black 0%,
+        black 78%,
         transparent 100%
     );
 }
+.main-image::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0) 100%,
+        transparent 100%
+    );
+
+    pointer-events: none;
+}
+
 .site-title{ 
     text-align: center;
     font-size: clamp(20px,6vw, 50px);
-    color: var(--gold);
-    text-shadow: 
-    0px 0px 9px var(--orange),
-    0px 0px 10px var(--orange);
     text-transform: uppercase;
     position: absolute;
     top: 42%;
@@ -173,7 +192,7 @@ body{
     text-align: center;
     text-transform: uppercase;
     color:var(--white);
-    font-size: clamp(10px, 0.8vw, 28px);
+    font-size: clamp(10px, 0.9vw, 28px);
     font-family: sans-serif;
     gap: 1rem;
 }
@@ -186,12 +205,11 @@ body{
 }
 .about-us-description-1{
     text-align: center;
-    width: 39%;
+    width: 45%;
     margin: 10vh auto ;
     color:var(--white);
     line-height: 1.6;
-    font-size: clamp(10px, 1vw, 28px);
-    font-family: sans-serif;
+    font-size: clamp(10px, 1.2vw, 28px);
 
 }
 .about-us-final{
@@ -202,7 +220,7 @@ body{
     text-shadow: 
     0 0 8px var(--red),
     0 0 10px var(--red);
-    font-size: clamp(10px, 0.8vw, 28px);
+    font-size: clamp(10px, 0.9vw, 28px);
 }
 
 
@@ -341,7 +359,6 @@ body{
     color:var(--white);
     line-height: 1.6;
     font-size: clamp(10px, 1vw, 28px);
-    font-family: sans-serif;
     text-transform: none;
     width: 80%;
     margin: auto;
@@ -440,7 +457,7 @@ body{
     /* Encendido normal */
     0%, 70%, 100%{
         opacity:1;
-        color: var(--gold);
+        color: var(--creme);
 
         text-shadow:
             0 0 5px #ffb347,
@@ -465,7 +482,7 @@ body{
     /* Vuelve un instante */
     74%{
         opacity:1;
-        color:var(--gold);
+        color:var(--creme);
 
         text-shadow:
             0 0 8px #ffd17d,
@@ -484,7 +501,7 @@ body{
     /* Ya queda estable */
     76%,100%{
         opacity:1;
-        color: var(--gold);
+        color: var(--creme);
 
         text-shadow:
             0 0 5px #ffb347,
