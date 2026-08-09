@@ -135,18 +135,22 @@ body{
 
     pointer-events: none;
 }
-
-.site-title{ 
-    text-align: center;
-    font-size: clamp(20px,6vw, 50px);
-    text-transform: uppercase;
-    position: absolute;
-    top: 42%;
+.site-legend{
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+}
+.site-title{ 
+    margin: 0;
+    text-align: center;
+    font-size: clamp(20px,6vw, 50px);
     animation: neon-flicker 8s infinite;
 }
 .site-subtitle{
+    margin: 0;
     text-align: center;
     font-size: clamp(10px, 2vw, 20px);
     color: var(--rose);
@@ -154,11 +158,6 @@ body{
     0px 0px 8px var(--red),
     0px 0px 12px var(--red),
     0px 0px 20px var(--red);
-    text-transform: uppercase;
-    position: absolute;
-    top: 49%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 
@@ -475,17 +474,19 @@ body{
 /* IDENTIDAD */
 
 .footer-brand img{
-    width: clamp(35px, 4vw, 60px);
+    width: clamp(35px, 3.4vw, 60px);
 }
-
+.footer-slogan{
+    color: var(--rose);
+    text-shadow: 
+    0px 0px 8px var(--red),
+    0px 0px 12px var(--red),
+    0px 0px 20px var(--red);
+    text-transform: uppercase; 
+}
 .footer-brand p{
     margin-top: 1.5rem;
-
-    font-family: sans-serif;
     font-size: .85rem;
-
-    color: var(--white);
-    opacity: .7;
 }
 
 
