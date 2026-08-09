@@ -233,7 +233,7 @@ body{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     overflow: hidden;
-    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: grid-template-columns 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .brand-image{
@@ -262,7 +262,9 @@ body{
 
 .brands > article:hover .brand-image {
     transform: scale(1.05); 
-    filter: brightness(0.3); 
+}
+.brand-card:hover .brand-overlay{
+    background: rgba(0, 0, 0, 0.55);
 }
 .brands:has(.brand-image:hover){
     grid-template-columns: 0.7fr 0.7fr 0.7fr;
@@ -445,6 +447,128 @@ body{
 }
 
 
+
+/* FOOTER */
+
+.site-footer{
+    width: 100%;
+    background: var(--background);
+    border-top: 1px solid rgba(255, 230, 132, 0.2);
+    color: var(--white);
+}
+
+
+/* PARTE PRINCIPAL */
+
+.footer-main{
+    width: 85%;
+    margin: 0 auto;
+
+    padding: 5rem 0;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
+}
+
+
+/* IDENTIDAD */
+
+.footer-brand img{
+    width: clamp(35px, 4vw, 60px);
+}
+
+.footer-brand p{
+    margin-top: 1.5rem;
+
+    font-family: sans-serif;
+    font-size: .85rem;
+
+    color: var(--white);
+    opacity: .7;
+}
+
+
+/* TITULOS */
+
+.footer-navigation h3,
+.footer-contact h3{
+    margin: 0 0 1.5rem;
+
+    color: var(--gold);
+
+    font-size: .9rem;
+
+    text-transform: uppercase;
+}
+
+
+/* LINKS */
+
+.footer-navigation,
+.footer-contact{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.footer-navigation a,
+.footer-contact a{
+    width: fit-content;
+
+    color: var(--white);
+
+    text-decoration: none;
+
+    font-family: sans-serif;
+    font-size: .85rem;
+
+    opacity: .7;
+
+    transition: color .3s ease,
+                opacity .3s ease;
+}
+
+.footer-navigation a:hover,
+.footer-contact a:hover{
+    color: var(--gold);
+    opacity: 1;
+}
+
+
+/* INFORMACIÓN */
+
+.footer-contact p{
+    margin: 0;
+
+    font-family: sans-serif;
+    font-size: .85rem;
+
+    line-height: 1.5;
+
+    opacity: .7;
+}
+
+
+/* PARTE INFERIOR */
+
+.footer-bottom{
+    width: 85%;
+    margin: 0 auto;
+
+    padding: 1.5rem 0;
+
+    border-top: 1px solid rgba(255, 255, 255, .1);
+
+    display: flex;
+    justify-content: space-between;
+
+    font-family: sans-serif;
+    font-size: .7rem;
+
+    color: var(--white);
+    opacity: .5;
+}
 
 
 
