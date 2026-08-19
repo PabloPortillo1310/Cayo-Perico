@@ -331,7 +331,7 @@ body{
 
     width: 100%;
 
-    font-size: clamp(22px, 1.6vw, 38px);
+    font-size: clamp(15px, 1.6vw, 38px);
     text-align: center;
 
     transform: translateY(
@@ -498,7 +498,7 @@ body{
     padding: 5rem 0;
 
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 4rem;
 
 }
@@ -518,9 +518,13 @@ body{
 }
 .footer-brand p{
     margin-top: 1.5rem;
-    font-size: 0.9rem;
+    font-size: clamp(10px, 1vw, 28px);
 }
-
+.footer-section{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+    }
 
 /* TITULOS */
 
@@ -532,7 +536,7 @@ body{
     0 0 5px #ffb347,
     0 0 8px #ff9900,
     0 0 18px #ff7700;
-    font-size: 1rem;
+    font-size: clamp(10px, 1vw, 28px);
     text-transform: uppercase;
 }
 
@@ -555,7 +559,7 @@ body{
     text-decoration: none;
 
     font-family: sans-serif;
-    font-size: 0.9rem;
+    font-size: clamp(10px, 0.8vw, 28px);
 
     opacity: .9;
 
@@ -574,12 +578,8 @@ body{
 
 .footer-contact p{
     margin: 0;
-
     font-family: sans-serif;
-    font-size: 0.9rem;
-
     line-height: 1.5;
-
     opacity: .9;
 }
 
@@ -598,7 +598,7 @@ body{
     justify-content: space-between;
 
     font-family: sans-serif;
-    font-size: 0.9rem;
+    font-size: clamp(10px, 0.8vw, 28px);
     color: var(--white);
     opacity: .7;
 }
@@ -633,11 +633,21 @@ body{
         height: auto;
     }
     .footer-main {
+        padding: 2rem 0;
         grid-template-columns: 1fr;
         gap: .5rem;
     }
-    .footer-bottom {
-        flex-direction: column;
+    .footer-section{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .footer-contact{
+        justify-self:end;
+    }
+    .footer-navigation h3, .footer-contact h3{
+        margin: .5rem 0 .5rem;
+    }
+    .footer-bottom{
         gap: .5rem;
     }
     .brands{
