@@ -331,7 +331,7 @@ body{
 
     width: 100%;
 
-    font-size: clamp(15px, 1.6vw, 38px);
+    font-size: clamp(20px, 1.6vw, 38px);
     text-align: center;
 
     transform: translateY(
@@ -631,6 +631,9 @@ body{
     }
     .brands{
         height: auto;
+    }
+    .brand-card{
+        height: 80svh;
     }
     .footer-main {
         padding: 2rem 0;
